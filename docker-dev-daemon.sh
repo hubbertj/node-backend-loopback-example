@@ -1,0 +1,1 @@
+docker run -p=3000:3000 --rm --env-file ./.ENV -d --name operation-hope-api -v $PWD/app/:/usr/src/app/ operation-hope-api nodemon .

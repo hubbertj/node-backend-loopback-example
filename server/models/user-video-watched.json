@@ -1,0 +1,37 @@
+{
+  "name": "UserVideoWatched",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "lastPosition": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "operationHopeUser": {
+      "type": "belongsTo",
+      "model": "OperationHopeUser",
+      "foreignKey": "ownerId"
+    },
+    "video": {
+      "type": "belongsTo",
+      "model": "Video"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

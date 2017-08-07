@@ -1,0 +1,34 @@
+{
+  "name": "Entity",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "dataType": "longtext"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "OperationHopeUsers": {
+      "type": "hasMany",
+      "model": "ThrEntityUserAdmins"
+    },
+    "OperationHopeAdmins": {
+      "type": "hasMany",
+      "model": "ThrEntityUsers"
+    },
+    "Curriculums": {
+      "type": "hasMany",
+      "model": "Curriculum"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

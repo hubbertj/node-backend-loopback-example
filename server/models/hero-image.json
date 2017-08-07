@@ -1,0 +1,38 @@
+{
+  "name": "HeroImage",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "scope": {
+    "order": "ordinal ASC"
+  },
+  "properties": {
+    "imageUrl": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "ordinal": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "curriculum": {
+      "type": "belongsTo",
+      "model": "Curriculum"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "upload"
+    }
+  ],
+  "methods": {}
+}

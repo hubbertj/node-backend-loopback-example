@@ -1,0 +1,109 @@
+{
+  "name": "Chapter",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "scope": {
+    "order": "ordinal ASC"
+  },
+  "properties": {
+    "title": {
+      "type": "I18NText",
+      "required": true
+    },
+    "communityUrl": {
+      "type": "string",
+      "description": "Zen Desk URL"
+    },
+    "subtitle": {
+      "type": "I18NText"
+    },
+    "description": {
+      "type": "I18NText",
+      "dataType": "longtext"
+    },
+    "estimatedTime": {
+      "type": "number",
+      "description": "Value in minutes"
+    },
+    "headerImageURI": {
+      "type": "string"
+    },
+    "headerImageUriLarge": {
+      "type": "string"
+    },
+    "isEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "ordinal": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "curriculum": {
+      "type": "belongsTo",
+      "model": "Curriculum"
+    },
+    "lessons": {
+      "type": "hasMany",
+      "model": "Lesson"
+    },
+    "activities": {
+      "type": "hasMany",
+      "model": "Activity"
+    },
+    "videos": {
+      "type": "hasMany",
+      "model": "Video"
+    },
+    "assessments": {
+      "type": "hasMany",
+      "model": "Assessment"
+    },
+    "achievements": {
+      "type": "hasMany",
+      "model": "Achievement"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "uploadCover"
+    }
+  ],
+  "methods": {}
+}

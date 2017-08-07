@@ -1,0 +1,115 @@
+{
+  "restApiRoot": "/api",
+  "host": "0.0.0.0",
+  "port": 3000,
+  "remoting": {
+    "context": false,
+    "rest": {
+      "normalizeHttpPath": false,
+      "xml": false
+    },
+    "json": {
+      "strict": false,
+      "limit": "100kb"
+    },
+    "urlencoded": {
+      "extended": true,
+      "limit": "100kb"
+    },
+    "cors": false,
+    "handleErrors": false
+  },
+  "legacyExplorer": false,
+  "mandrill": {
+    "apiKey": "Iaju039HdPo4oeHi5WSgnw",
+    "from": {
+      "name": "Operation Hope",
+      "email": "no-reply@operationhopeapps.org"
+    }
+  },
+  "cdn": {
+    "bucket": {
+      "name": "cdn.operationhopeapps.org",
+      "region": "us-west-2"
+    }
+  },
+  "aws": {
+    "accessKeyId": "AKIAI6XFBXJPJCNG2PFQ",
+    "secretAccessKey": "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"
+  },
+  "production": {
+    "s3": {
+      "buckets": {
+        "upload": {
+          "name": "operation-hope-upload",
+          "region": "us-west-1"
+        },
+        "content": {
+          "name": "operation-hope-content",
+          "region": "us-west-1"
+        }
+      }
+    }
+  },
+  "local": {
+    "s3": {
+      "buckets": {
+        "upload": {
+          "name": "operation-hope-upload-staging",
+          "region": "us-west-1"
+        },
+        "content": {
+          "name": "operation-hope-content-staging",
+          "region": "us-west-1"
+        }
+      }
+    }
+  },
+  "dev": {
+    "s3": {
+      "buckets": {
+        "upload": {
+          "name": "operation-hope-upload-staging",
+          "region": "us-west-1"
+        },
+        "content": {
+          "name": "operation-hope-content-staging",
+          "region": "us-west-1"
+        }
+      }
+    }
+  },
+  "staging": {
+    "s3": {
+      "buckets": {
+        "upload": {
+          "name": "operation-hope-upload-staging",
+          "region": "us-west-1"
+        },
+        "content": {
+          "name": "operation-hope-content-staging",
+          "region": "us-west-1"
+        }
+      }
+    }
+  },
+  "uat": {
+    "s3": {
+      "buckets": {
+        "upload": {
+          "name": "operation-hope-upload-uat",
+          "region": "us-west-1"
+        },
+        "content": {
+          "name": "operation-hope-content-uat",
+          "region": "us-west-1"
+        }
+      }
+    }
+  },
+  "vimeo": {
+    "clientIdentifier": "aef99924fa23944ce5cef5c0968765ae492dfe93",
+    "clientSecret": "uOjFgcx0SEd2cUhE+nCe+7vMddRFaCSo8Nlocn16G9tjOxb8shQqmlx9G6TWnTBm6/Bo8JUKOsC1sFoCVQJ7vRsidrJx8Zbc1piztP8nido1EHwBgU7kEmtGVZ7z90Yu",
+    "accessToken": "5599ceb77c999f481247ffeaaaa0ca83"
+  }
+}

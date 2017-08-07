@@ -1,0 +1,38 @@
+{
+  "name": "Deliverable",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "I18NText"
+    },
+    "contentUri": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "requiresCurriculumCompleted": {
+      "type": "boolean"
+    },
+    "data":{
+      "type": "array"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "curriculum": {
+      "type": "belongsTo",
+      "model": "Curriculum"
+    },
+    "user":{
+      "type": "belongsTo",
+      "model": "OperationHopeUser"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

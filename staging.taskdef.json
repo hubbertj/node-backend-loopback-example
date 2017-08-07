@@ -1,0 +1,32 @@
+{
+  "containerDefinitions": [
+    {
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "containerPort": 3000,
+          "protocol": "tcp"
+        },
+        {
+          "hostPort": 80,
+          "containerPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "entryPoint": [],
+      "mountPoints": [],
+      "name": "operation-hope-staging",
+      "environment": [
+        {
+          "name": "NODE_ENV",
+          "value": "staging"
+        }
+      ],
+      "image": "%REPOSITORY_URI%:v_%BUILD_NUMBER%",
+      "cpu": 10,
+      "memory": 300
+    }
+  ],
+  "family": "operation-hope-staging-task"
+}

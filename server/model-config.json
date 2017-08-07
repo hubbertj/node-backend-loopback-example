@@ -1,0 +1,141 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins",
+      "../node_modules/loopback-remote-routing"
+    ]
+  },
+  "User": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "OperationHopeUser": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Curriculum": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Chapter": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Lesson": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Entity": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Activity": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Video": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Assessment": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "AssessmentScore": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "UserRecord": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "UserNote": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Deliverable": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Achievement": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "WorkerQueue": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "LessonProgress": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "ActivityProgress": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "ThrEntityUsers": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "ThrEntityUserAdmins": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "ThrUserCompletedAchievemnt": {
+    "dataSource": "mysqlDs",
+    "public": false
+  },
+  "Upload": {
+    "dataSource": null,
+    "public": true
+  },
+  "UserVideoWatched": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "I18NText": {
+    "dataSource": null,
+    "public": false
+  },
+  "HeroImage": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Vimeo": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "Enrollment": {
+    "dataSource": "mysqlDs",
+    "public": true
+  },
+  "EnrollmentQuestion": {
+    "dataSource": "mysqlDs",
+    "public": true
+  }
+}

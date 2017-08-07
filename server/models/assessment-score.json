@@ -1,0 +1,46 @@
+{
+  "name": "AssessmentScore",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created": {
+      "type": "date"
+    },
+    "maxScore": {
+      "type": "number"
+    },
+    "score": {
+      "type": "number"
+    },
+    "scoreType": {
+      "type": "string",
+      "default": "Start",
+      "enum": [
+        "Start",
+        "Intermediate",
+        "Exit"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "description": "for storing assessments answers given (json)"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "assessment": {
+      "type": "belongsTo",
+      "model": "Assessment"
+    },
+    "operationHopeUser": {
+      "type": "belongsTo",
+      "model": "OperationHopeUser",
+      "foreignKey": "ownerId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

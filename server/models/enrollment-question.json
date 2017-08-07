@@ -1,0 +1,27 @@
+{
+  "name": "EnrollmentQuestion",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "questions": {
+      "type": "string",
+      "required": true,
+      "mysql": {
+        "dataType":"LONGTEXT"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "curriculum": {
+      "type": "belongsTo",
+      "model": "Curriculum",
+      "foreignKey": "curriculumId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

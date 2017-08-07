@@ -1,0 +1,153 @@
+{
+  "name": "OperationHopeUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "RemoteRouting": {
+      "except": [
+        "__create__achievements",
+        "__update__achievements",
+        "__delete__achievements",
+        "__destroyById__achievements",
+        "__findById__achievements",
+        "__updateById__achievements",
+        "__findById__lessonsProgress",
+        "__delete__lessonsProgress",
+        "__findById__activitiesProgress",
+        "__delete__activitiesProgress",
+        "__get__accessTokens",
+        "__create__accessTokens",
+        "__updateById__accessTokens",
+        "@replaceById",
+        "@upsertWithWhere"
+      ]
+    }
+  },
+  "properties": {
+    "credentials": false,
+    "challenges": false,
+    "realm": false,
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string",
+      "default": "Prefer not to answer"
+    },
+    "ethnicity": {
+      "type": "string",
+      "default": "Prefer not to answer"
+    },
+    "race": {
+      "type": "string",
+      "default": "Prefer not to answer"
+    },
+    "income": {
+      "type": "string",
+      "default": "0"
+    },
+    "zipCode": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "date"
+    },
+    "isSuperAdmin": {
+      "type": "boolean",
+      "default": false
+    },
+    "created": {
+      "type": "date",
+      "required": false,
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "userRecords": {
+      "type": "hasMany",
+      "model": "UserRecord",
+      "foreignKey": "ownerId"
+    },
+    "lessonsProgress": {
+      "type": "hasMany",
+      "model": "LessonProgress",
+      "foreignKey": "ownerId"
+    },
+    "activitiesProgress": {
+      "type": "hasMany",
+      "model": "ActivityProgress",
+      "foreignKey": "ownerId"
+    },
+    "assessmentScores": {
+      "type": "hasMany",
+      "model": "AssessmentScore",
+      "foreignKey": "ownerId"
+    },
+    "userVideosWatched": {
+      "type": "hasMany",
+      "model": "UserVideoWatched",
+      "foreignKey": "ownerId"
+    },
+    "userNotes": {
+      "type": "hasMany",
+      "model": "UserNote",
+      "foreignKey": "ownerId"
+    },
+    "roles": {
+      "type": "hasMany",
+      "model": "RoleMapping",
+      "foreignKey": "principalId"
+    },
+    "achievements": {
+      "type": "hasMany",
+      "model": "Achievement",
+      "foreignKey": "operationHopeUserId",
+      "through": "ThrUserCompletedAchievemnt"
+    },
+    "enrollments": {
+      "type": "hasMany",
+      "model": "Enrollment",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "chapterProgress"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "createAdmin"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "getUsersByRole"
+    }
+  ],
+  "methods": {}
+}

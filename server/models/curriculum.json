@@ -1,0 +1,81 @@
+{
+  "name": "Curriculum",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "I18NText",
+      "required": true
+    },
+    "abbreviationTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "I18NText",
+      "dataType": "longtext"
+    },
+    "isIos": {
+      "type": "boolean"
+    },
+    "isAndroid": {
+      "type": "boolean"
+    },
+    "isWeb": {
+      "type": "boolean"
+    },
+    "estimatedTime": {
+      "type": "number",
+      "description": "Value in minutes"
+    },
+    "enabledLanguages": {
+      "type": "array",
+      "description": "Used by the container apps to display enabled languages"
+    },
+    "supportedLanguages": {
+      "type": "array",
+      "description": "Used by the admin dashboard when adding new language content"
+    },
+    "isEnabled": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "entity": {
+      "type": "belongsTo",
+      "model": "Entity"
+    },
+    "chapters": {
+      "type": "hasMany",
+      "model": "Chapter"
+    },
+    "certificate": {
+      "type": "hasOne",
+      "model": "Deliverable"
+    },
+    "deliverables": {
+      "type": "hasMany",
+      "model": "Deliverable"
+    },
+    "heroImages": {
+      "type": "hasMany",
+      "model": "HeroImage"
+    },
+    "enrollments": {
+      "type": "hasMany",
+      "model": "Enrollment",
+      "foreignKey": "curriculumId"
+    },
+    "enrollmentQuestion": {
+      "type": "hasOne",
+      "model": "EnrollmentQuestion",
+      "foreignKey": "curriculumId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

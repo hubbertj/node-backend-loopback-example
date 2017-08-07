@@ -1,0 +1,68 @@
+{
+  "name": "UserNote",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created": {
+      "type": "date"
+    },
+    "updated": {
+      "type": "date"
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "dataType": "longtext"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "operationHopeUser": {
+      "type": "belongsTo",
+      "model": "OperationHopeUser",
+      "foreignKey": "ownerId"
+    },
+    "curriculum": {
+      "type": "belongsTo",
+      "model": "Curriculum"
+    },
+    "chapter": {
+      "type": "belongsTo",
+      "model": "Chapter"
+    },
+    "lesson": {
+      "type": "belongsTo",
+      "model": "Lesson"
+    },
+    "activity": {
+      "type": "belongsTo",
+      "model": "Activity"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "Role",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "Role",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "Role",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,76 @@
+{
+  "name": "Achievement",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "I18NText"
+    },
+    "contentUri": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Chapter",
+        "Lesson",
+        "Activity"
+      ],
+      "requierd": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "operationHopeUser": {
+      "type": "hasMany",
+      "model": "OperationHopeUser",
+      "foreignKey": "achievemntId",
+      "through": "ThrUserCompletedAchievemnt"
+    },
+    "chapter": {
+      "type": "belongsTo",
+      "model": "Chapter"
+    },
+    "lesson": {
+      "type": "belongsTo",
+      "model": "Lesson"
+    },
+    "activity": {
+      "type": "belongsTo",
+      "model": "Activity"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "*"
+    }
+  ],
+  "methods": {}
+}

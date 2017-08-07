@@ -1,0 +1,17 @@
+{
+  "deploymentConfiguration": {
+    "minimumHealthyPercent": 100,
+    "maximumPercent": 200
+  },
+  "serviceName": "operation-hope-staging-service",
+  "taskDefinition": "operation-hope-staging-task",
+  "desiredCount": 1,
+  "loadBalancers": [{
+    "loadBalancerName": "staging-elb",
+    "containerName": "operation-hope-staging",
+    "containerPort": 3000
+  }],
+  "role": "ecsServiceRole",
+  "cluster" : "staging-cluster",
+  "desiredCount": 2
+}

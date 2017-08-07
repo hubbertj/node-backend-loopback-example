@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqlDs": {
+    "host": "operationhope-staging.ckbg17ziycvp.us-west-1.rds.amazonaws.com",
+    "port": 3306,
+    "database": "operationhope",
+    "username": "operationapp",
+    "password": "1e91ea73c9eb05680a25c829",
+    "name": "mysqlDs",
+    "connector": "mysql",
+    "acquireTimeout": 5000
+  }
+}

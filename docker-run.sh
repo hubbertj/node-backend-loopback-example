@@ -1,0 +1,1 @@
+docker run -p=3000:3000 --rm -d --env-file ./.ENV --name operation-hope-api operation-hope-api

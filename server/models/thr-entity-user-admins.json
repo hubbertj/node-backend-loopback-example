@@ -1,0 +1,22 @@
+{
+  "name": "ThrEntityUserAdmins",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "operationHopeUser": {
+      "type": "belongsTo",
+      "model": "OperationHopeUser"
+    },
+    "entity": {
+      "type": "belongsTo",
+      "model": "Entity"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
